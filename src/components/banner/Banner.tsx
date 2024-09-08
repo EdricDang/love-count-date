@@ -1,18 +1,62 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { calculateTimeDifferenceDetailed } from "@/utils";
 
 const Banner = () => {
-  const [timeLeft, setTimeLeft] = useState({
+  const [timeElapsed, setTimeElapsed] = useState({
     days: 0,
     hours: 0,
     minutes: 0,
-    seconds: 0
+    seconds: 0,
   });
+
+  useEffect(() => {
+    // Tính khoảng thời gian ban đầu giữa 2 ngày
+    const initialTimeDifference = calculateTimeDifferenceDetailed(
+      "2024-08-25T10:00:00"
+    );
+
+    // Khởi tạo thời gian bắt đầu từ giá trị ban đầu
+    let elapsedTime = {
+      days: initialTimeDifference.days,
+      hours: initialTimeDifference.hours,
+      minutes: initialTimeDifference.minutes,
+      seconds: initialTimeDifference.seconds,
+    };
+
+    // Hàm để tăng thời gian lên mỗi giây
+    const incrementTime = () => {
+      elapsedTime.seconds += 1;
+
+      // Kiểm tra và điều chỉnh phút, giờ, ngày khi giây vượt quá 59
+      if (elapsedTime.seconds >= 60) {
+        elapsedTime.seconds = 0;
+        elapsedTime.minutes += 1;
+      }
+      if (elapsedTime.minutes >= 60) {
+        elapsedTime.minutes = 0;
+        elapsedTime.hours += 1;
+      }
+      if (elapsedTime.hours >= 24) {
+        elapsedTime.hours = 0;
+        elapsedTime.days += 1;
+      }
+
+      // Cập nhật state
+      setTimeElapsed({ ...elapsedTime });
+    };
+
+    // Thiết lập interval để tăng thời gian mỗi giây
+    const timerId = setInterval(incrementTime, 1000);
+
+    // Dọn dẹp interval khi component unmount
+    return () => clearInterval(timerId);
+  }, []);
 
   return (
     <div
-      className="bg-[#ccc] h-[100vh] flex items-center justify-center relative"
+      className="h-[100vh] flex items-center justify-center relative"
       style={{
         backgroundImage: `url('/pictures/sky-blue.jpg')`,
         backgroundSize: "cover",
@@ -33,11 +77,11 @@ const Banner = () => {
           <h2 className="text-[24px] text-white">TRẢI QUA</h2>
           <div className="flex items-center justify-center px-[100px] py-5 min-w-[300px] bg-[#0808083c] text-[#ffffff] rounded-[20px]">
             <div className="flex flex-col items-center justify-center">
-              <div className="text-[18px]">{timeLeft.days} ngày </div>
-              <div className="text-[18px]">
-                {String(timeLeft.hours).padStart(2, '0')}:
-                {String(timeLeft.minutes).padStart(2, '0')}:
-                {String(timeLeft.seconds).padStart(2, '0')}
+              <div className="text-[18px]">{timeElapsed.days} ngày </div>
+              <div className="text-[24px]">
+                {String(timeElapsed.hours).padStart(2, "0")}:
+                {String(timeElapsed.minutes).padStart(2, "0")}:
+                {String(timeElapsed.seconds).padStart(2, "0")}
               </div>
             </div>
           </div>

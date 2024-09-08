@@ -153,4 +153,11 @@ html, body {
 }
 
   
-  
+body{margin:0;height:100%;}
+canvas{
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index:10;
+}

@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Shantell_Sans } from "next/font/google";
 import "./globals.css";
 import "@/styles/main.css";
 import "@/styles/helper.css";
 import Header from "@/components/layouts/header";
 import FallingHearts from "@/components/bases/FallingHearts";
+import CanvasAnimation from "@/components/bases/CanvasAnimation";
 
-const inter = Inter({ subsets: ["latin"] });
+const shantell_sans = Shantell_Sans({
+  subsets: ["vietnamese"],
+  weight: ["300", "400", "500"],
+});
 
 export const metadata: Metadata = {
   title: " ❤️ Linh",
@@ -28,8 +32,9 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className={inter.className}>
+      <body className={shantell_sans.className}>
         <FallingHearts />
+        <CanvasAnimation />
         <Header />
         {children}
       </body>
