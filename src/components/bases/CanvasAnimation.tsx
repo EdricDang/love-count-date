@@ -34,8 +34,14 @@ const CanvasAnimation = () => {
     const mouse = { x: -100, y: -100 };
     const minDist = 150;
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    // Cập nhật kích thước canvas
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    resizeCanvas();
+
+    window.addEventListener("resize", resizeCanvas);
 
     const image = new Image();
     image.src =
@@ -130,7 +136,11 @@ const CanvasAnimation = () => {
           thing.angle -= _angle;
         }
 
-        if (thing.y > canvas.height || thing.x > canvas.width || thing.x < -thing.width) {
+        // Reset hạt tuyết khi ra khỏi canvas
+        if (thing.y > canvas.height) {
+          reset(thing);
+        }
+        if (thing.x > canvas.width || thing.x < -thing.width) {
           reset(thing);
         }
       });
@@ -141,7 +151,7 @@ const CanvasAnimation = () => {
       thing.width = (Math.floor(Math.random() * 20) + 20) * (thing.opacity + 0.4);
       thing.height = (image.naturalHeight / image.naturalWidth) * thing.width;
       thing.x = Math.floor(Math.random() * canvas.width);
-      thing.y = -thing.height;
+      thing.y = -thing.height; // Đảm bảo nó bắt đầu từ trên cùng của canvas
       thing.speed = Math.random() * 1 + 0.5;
       thing.vY = thing.speed;
       thing.vX = 0;
@@ -164,6 +174,7 @@ const CanvasAnimation = () => {
     tick();
 
     return () => {
+      window.removeEventListener("resize", resizeCanvas);
       canvas.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
