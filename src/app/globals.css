@@ -2,32 +2,155 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html, body {
+  height: 100%;
+  font-family: "Shantell Sans", cursive;
+  font-weight: 400;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px; /* Đặt kích thước chiều rộng của thanh cuộn */
+  height: 6px;
+}
+
+/* Thumb của thanh cuộn (phần di chuyển) */
+::-webkit-scrollbar-thumb {
+  background-color: #caceda; /* Màu của thanh cuộn */
+  border-radius: 4px; /* Độ cong của thanh cuộn */
+}
+
+/* Track của thanh cuộn (phần nằm ngoài thumb) */
+::-webkit-scrollbar-track {
+  background-color: transparent; /* Màu của track */
+  border-radius: 4px; /* Độ cong của track */
+}
+
+.wrapper {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  min-height: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.x1, .x2, .x3, .x4, .x5, .x6 {
+  position: absolute;
+}
+
+.x1 {
+  left: 5%;
+  transform: scale(0.9);
+  opacity: 0.6;
+  animation: moveclouds 15s linear infinite, sideWays 4s ease-in-out infinite alternate;
+}
+
+.x2 {
+  left: 25%;
+  transform: scale(0.6);
+  opacity: 0.9;
+  animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
+}
+
+.x3 {
+  left: 55%;
+  transform: scale(0.8);
+  opacity: 0.8;
+  animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+}
+
+.x4 {
+  left: 72%;
+  transform: scale(0.75);
+  opacity: 0.9;
+  animation: moveclouds 18s linear infinite, sideWays 2s ease-in-out infinite alternate;
+}
+
+.x5 {
+  left: 88%;
+  transform: scale(0.8);
+  opacity: 0.3; 
+  animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+}
+
+.x6 {
+  left: 33%;
+  opacity: 1; 
+  animation: moveclouds 10s linear infinite, swayWays 9s ease-in-out infinite alternate;
+}
+
+@keyframes moveclouds { 
+  0% { 
+    top: 500px;
+  }
+  100% { 
+    top: -500px;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@keyframes sideWays { 
+  0% { 
+    margin-left: 0px;
+  }
+  100% { 
+    margin-left: 50px;
   }
 }
+
+@keyframes swayWays {
+  0% {
+    transform: rotate(12deg);
+    left: -0.3%;
+  }
+  33% {
+    transform: rotate(-2deg);
+    left: 0.7%;
+  }
+  100% {
+    transform: rotate(0deg);
+    left: -12%;
+  }
+}
+
+/* Heart styling */
+.altheart {
+  background: url(http://static.indigoimages.ca/2016/shop/113439_img25_twotoneheart.png) no-repeat center;
+  width: 24px;
+  height: 21px;
+  position: absolute; /* Đặt position thành absolute */
+  display: block;
+  z-index: 1000; /* Đảm bảo nó nằm trên cùng */
+}
+
+.heart {
+  position: absolute; /* Đặt position thành absolute */
+  z-index: 999; /* Đảm bảo nó nằm dưới altheart */
+}
+
+.heart:before,
+.heart:after {
+  position: absolute;
+  content: "";
+  left: 18px;
+  top: 0;
+  width: 18px;
+  height: 30px;
+  background: #CC2022;
+  border-radius: 30px 30px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.heart:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+  
+  
