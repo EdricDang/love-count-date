@@ -64,7 +64,7 @@ const Banner = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="absolute bottom-[-2px] left-0 right-0 h-[60px] w-full z-1">
+      <div className="absolute bottom-[-2px] left-0 right-0 h-[80px] w-full z-1">
         <Image
           src="/icons/layer-xuoc.png"
           alt="xuoc"

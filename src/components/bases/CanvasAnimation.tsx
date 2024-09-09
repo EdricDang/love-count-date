@@ -47,6 +47,7 @@ const CanvasAnimation = () => {
     image.src =
       "https://static.wixstatic.com/media/2cd43b_57438aebde5a4b0fa20c6880a9fafabf~mv2.png/v1/fill/w_320,h_272,fp_0.50_0.50/2cd43b_57438aebde5a4b0fa20c6880a9fafabf~mv2.png";
 
+    // image.src = "https://ngocanhhieuluv.iwedding.info/common/imgs/heart.png"
     image.onload = () => {
       for (let i = 0; i < thingsCount; i++) {
         let opacity = Math.random() + 0.4;

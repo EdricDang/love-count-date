@@ -30,7 +30,7 @@ const Header = () => {
             <li className="flex items-center text-[18px] font-semibold border-b xl:border-none">
               <a
                 className="w-full px-5 py-5 xl:p-0 hover:bg-[#ccc] inline-block cursor-pointer"
-                href="#couper"
+                href="#couple"
               >
                 Cặp đôi
               </a>

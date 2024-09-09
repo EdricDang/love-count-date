@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 html, body {
+  scroll-behavior: smooth;
   height: 100%;
   font-family: "Shantell Sans", cursive;
   font-weight: 400;
@@ -160,4 +161,8 @@ canvas{
     left: 0;
     right: 0;
     z-index:10;
+}
+
+.box-shadow-custom {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
