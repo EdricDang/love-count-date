@@ -166,3 +166,28 @@ canvas{
 .box-shadow-custom {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+
+
+/* Hiệu ứng trượt vào từ trái */
+.couple-off-screen-left {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 0.5s ease-out;
+}
+
+.couple-on-screen-left {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Hiệu ứng trượt vào từ phải */
+.couple-off-screen-right {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.5s ease-out;
+}
+
+.couple-on-screen-right {
+  opacity: 1;
+  transform: translateX(0);
+}
