@@ -14,7 +14,7 @@ const Banner = () => {
   useEffect(() => {
     // Tính khoảng thời gian ban đầu giữa 2 ngày
     const initialTimeDifference = calculateTimeDifferenceDetailed(
-      "2024-08-25T10:00:00"
+      "2024-08-25T00:00:00"
     );
 
     // Khởi tạo thời gian bắt đầu từ giá trị ban đầu

@@ -191,3 +191,67 @@ canvas{
   opacity: 1;
   transform: translateX(0);
 }
+
+/* styles/globals.css hoặc .module.css */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.9;
+  }
+}
+
+.pulse-background {
+  position: relative;
+  z-index: 20;
+}
+
+.pulse-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%; /* Đảm bảo kích thước đúng */
+  height: 100%;
+  background-color: rgba(255, 77, 103, 0.5); /* Màu hồng nhạt */
+  border-radius: 50%;
+  z-index: -1;
+  animation: pulse 1.5s infinite;
+  pointer-events: none; /* Đảm bảo không ảnh hưởng tới button */
+}
+
+
+/* Animation mở rộng content */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  10% {
+    opacity: 1;
+    width: 280px; 
+  }
+  90% {
+    opacity: 1;
+    width: 280px;
+  }
+  100% {
+    opacity: 0;
+    width: 0;
+  }
+}
+
+.slide-expand {
+  animation: fadeInOut 8s ease-in-out forwards;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
+

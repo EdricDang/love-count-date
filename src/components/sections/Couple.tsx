@@ -6,7 +6,7 @@ const Couple = () => {
       id="couple"
       className="w-full h-[500px] bg-white z-1 flex flex-col items-center"
     >
-      <div className="">
+      <div className="mt-10">
         <h2 className="text-[30px] py-8 font-semibold">Cặp đôi</h2>
       </div>
       <div className="container">
