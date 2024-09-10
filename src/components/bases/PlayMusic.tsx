@@ -72,7 +72,7 @@ const PlayMusic: React.FC = () => {
       >
         Nhấn vào đây để phát nhạc
       </div>
-      <audio ref={audioRef} src="/music/perfect-ed-sheeran.mp3" />
+      <audio ref={audioRef} src="/music/I-Do-911.mp3" />
     </div>
   );
 };
