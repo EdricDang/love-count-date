@@ -2,16 +2,18 @@
 import React, { useEffect, useRef, useState } from "react";
 
 const Couple = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const componentRef = useRef(null);
+  const [isVisibleLeft, setIsVisibleLeft] = useState(false);
+  const [isVisibleRight, setIsVisibleRight] = useState(false);
+  const componentLeftRef = useRef(null);
+  const componentRightRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const observerLeft = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setIsVisible(true);
-            observer.unobserve(entry.target);
+            setIsVisibleLeft(true);
+            observerLeft.unobserve(entry.target);
           }
         });
       },
@@ -20,13 +22,34 @@ const Couple = () => {
       }
     );
 
-    if (componentRef.current) {
-      observer.observe(componentRef.current);
+    const observerRight = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisibleRight(true);
+            observerRight.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    if (componentLeftRef.current) {
+      observerLeft.observe(componentLeftRef.current);
+    }
+
+    if (componentRightRef.current) {
+      observerRight.observe(componentRightRef.current);
     }
 
     return () => {
-      if (componentRef.current) {
-        observer.unobserve(componentRef.current);
+      if (componentLeftRef.current) {
+        observerLeft.unobserve(componentLeftRef.current);
+      }
+      if (componentRightRef.current) {
+        observerRight.unobserve(componentRightRef.current);
       }
     };
   }, []);
@@ -41,9 +64,9 @@ const Couple = () => {
       <div className="container">
         <div className="flex flex-col xl:flex-row gap-20">
           <div
-            ref={componentRef}
+            ref={componentLeftRef}
             className={`relative w-full xl:w-[50%] p-5 flex flex-col items-center justify-center ${
-              isVisible ? "animate-slide-in-left" : "opacity-0"
+              isVisibleLeft ? "animate-slide-in-left" : "opacity-0"
             }`}
           >
             <div className="xl:absolute top-0 right-0 flex items-center mt-10 justify-center size-[180px] xl:size-[220px] rounded-[50%] bg-white box-shadow-custom">
@@ -65,9 +88,12 @@ const Couple = () => {
               </div>
             </div>
           </div>
-          <div className={`relative w-full xl:w-[50%] p-5 flex flex-col items-center justify-center ${
-              isVisible ? "animate-slide-in-right" : "opacity-0"
-            }`}>
+          <div
+            ref={componentRightRef}
+            className={`relative w-full xl:w-[50%] p-5 flex flex-col items-center justify-center ${
+              isVisibleRight ? "animate-slide-in-right" : "opacity-0"
+            }`}
+          >
             <div className="xl:absolute top-0 left-0 flex items-center mt-10 justify-center size-[180px] xl:size-[220px] rounded-[50%] bg-white box-shadow-custom">
               <div
                 className="size-[180px] xl:size-[200px] rounded-[50%]"
