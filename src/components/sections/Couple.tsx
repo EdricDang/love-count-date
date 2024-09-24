@@ -98,18 +98,18 @@ const Couple = () => {
               <div
                 className="size-[180px] xl:size-[200px] rounded-[50%]"
                 style={{
-                  backgroundImage: `url('/avartar/avt-linh.jpeg')`,
+                  backgroundImage: `url('/avartar/avt-thinh.jpeg')`,
                   backgroundSize: "cover",
                   backgroundPosition: "cover",
                   backgroundRepeat: "no-repeat",
                 }}
               ></div>
             </div>
-            <h3 className="text-[24px] py-5 font-semibold">Lê Thùy Linh</h3>
+            <h3 className="text-[24px] py-5 font-semibold">Đặng Hữu Thịnh</h3>
             <div className="xl:pl-[180px] xl:pr-[50px]">
               <div className="p-10 box-shadow-custom rounded-md">
-                Em người con gái mộng mơ, mạnh mẽ và ít nói, chỉ muốn gặp anh
-                khi thật đẹp...
+                Anh là một coder, hiền lành thẳng thắn, hướng nội với cả thế
+                giới, nhưng bị nói nhiều khi ở bên em...
               </div>
             </div>
           </div>

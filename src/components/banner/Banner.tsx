@@ -14,7 +14,7 @@ const Banner = () => {
   useEffect(() => {
     // Tính khoảng thời gian ban đầu giữa 2 ngày
     const initialTimeDifference = calculateTimeDifferenceDetailed(
-      "2024-08-25T00:00:00"
+      "2024-09-22T00:00:00"
     );
 
     // Khởi tạo thời gian bắt đầu từ giá trị ban đầu
@@ -99,13 +99,13 @@ const Banner = () => {
           <div className="flex flex-col items-center justify-center size-[90px] xl:size-[120px] rounded-[50%]">
             <Image src="/icons/traitim.gif" alt="love" width={90} height={90} />
             <div className="text-[#ffffff] text-[12px] xl:text-[16px]">
-              25-08-2024
+              00-00-0000
             </div>
           </div>
           <div
             className="flex items-center justify-center size-[100px] xl:size-[150px] rounded-[50%] bg-white"
             style={{
-              backgroundImage: `url('/avartar/avt-linh.jpeg')`,
+              backgroundImage: `url('/avartar/avt-thinh.jpeg')`,
               backgroundSize: "cover",
               backgroundPosition: "cover",
               backgroundRepeat: "no-repeat",

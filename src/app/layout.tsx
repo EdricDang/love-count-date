@@ -13,8 +13,8 @@ const shantell_sans = Shantell_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Thịnh ❤️ Linh",
-  description: "Đếm ngày yêu em ❤️",
+  title: "Thịnh ❤️",
+  description: "Đếm ngày ❤️",
 };
 
 export default function RootLayout({
