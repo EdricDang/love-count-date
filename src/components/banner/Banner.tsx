@@ -90,7 +90,7 @@ const Banner = () => {
           <div
             className="flex items-center justify-center size-[100px] xl:size-[150px] rounded-[50%] bg-white"
             style={{
-              backgroundImage: `url('/avartar/avt-thinh.jpeg')`,
+              backgroundImage: `url('/avartar/avt-nam.jpg')`,
               backgroundSize: "cover",
               backgroundPosition: "cover",
               backgroundRepeat: "no-repeat",
@@ -105,7 +105,7 @@ const Banner = () => {
           <div
             className="flex items-center justify-center size-[100px] xl:size-[150px] rounded-[50%] bg-white"
             style={{
-              backgroundImage: `url('/avartar/avt-thinh.jpeg')`,
+              backgroundImage: `url('/avartar/avt-nu.jpg')`,
               backgroundSize: "cover",
               backgroundPosition: "cover",
               backgroundRepeat: "no-repeat",

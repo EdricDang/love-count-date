@@ -73,14 +73,14 @@ const Couple = () => {
               <div
                 className="size-[180px] xl:size-[200px] rounded-[50%]"
                 style={{
-                  backgroundImage: `url('/avartar/avt-thinh.jpeg')`,
+                  backgroundImage: `url('/avartar/avt-nam.jpg')`,
                   backgroundSize: "cover",
                   backgroundPosition: "cover",
                   backgroundRepeat: "no-repeat",
                 }}
               ></div>
             </div>
-            <h3 className="text-[24px] py-5 font-semibold">Đặng Hữu Thịnh</h3>
+            <h3 className="text-[24px] py-5 font-semibold">Tên Bạn Trai</h3>
             <div className="xl:pr-[180px] xl:pl-[50px]">
               <div className="p-10 box-shadow-custom rounded-md">
                 Anh là một coder, hiền lành thẳng thắn, hướng nội với cả thế
@@ -98,17 +98,17 @@ const Couple = () => {
               <div
                 className="size-[180px] xl:size-[200px] rounded-[50%]"
                 style={{
-                  backgroundImage: `url('/avartar/avt-thinh.jpeg')`,
+                  backgroundImage: `url('/avartar/avt-nu.jpg')`,
                   backgroundSize: "cover",
                   backgroundPosition: "cover",
                   backgroundRepeat: "no-repeat",
                 }}
               ></div>
             </div>
-            <h3 className="text-[24px] py-5 font-semibold">Đặng Hữu Thịnh</h3>
+            <h3 className="text-[24px] py-5 font-semibold">Tên Bạn Gái</h3>
             <div className="xl:pl-[180px] xl:pr-[50px]">
               <div className="p-10 box-shadow-custom rounded-md">
-                Anh là một coder, hiền lành thẳng thắn, hướng nội với cả thế
+                Em là một coder, hiền lành thẳng thắn, hướng nội với cả thế
                 giới, nhưng bị nói nhiều khi ở bên em...
               </div>
             </div>
