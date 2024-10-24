@@ -99,7 +99,7 @@ const Banner = () => {
           <div className="flex flex-col items-center justify-center size-[90px] xl:size-[120px] rounded-[50%]">
             <Image src="/icons/traitim.gif" alt="love" width={90} height={90} />
             <div className="text-[#ffffff] text-[12px] xl:text-[16px]">
-              00-00-0000
+              22-09-2024
             </div>
           </div>
           <div
