@@ -17,7 +17,7 @@ const Header = () => {
   return (
     <div className="fixed bg-[#34343431] text-[#ffffff] flex items-center justify-between px-2 xl:px-5 box-shadow-bottom top-0 left-0 right-0 h-[64px] xl:h-[90px] z-10">
       <div className="container flex items-center justify-between px-2 xl:px-5">
-        <div className="text-[26px] font-semibold">T ❤️ L</div>
+        <div className="text-[26px] font-semibold">T ❤️ T</div>
 
         <nav
           className={`${
